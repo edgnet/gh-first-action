@@ -2,7 +2,7 @@
 
 name: First Workflow
 
-on: workflow_dispatch
+on: [issues, workflow_dispatch]
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -10,7 +10,7 @@ jobs:
       - name: Print greeting
         run: echo "Hello World!"
       - name: Expression
-        run: echo "${{ toJSON(github) }}"
+        run: echo "${{ toJSON(github.event) }}"
       - name: Print goodbye
         run: echo "Bye"
 
