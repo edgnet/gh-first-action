@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Print greeting
         run: echo "Hello World!"
+      - name: Expression
+        run: echo "${{ toJSON(github) }}"
       - name: Print goodbye
         run: echo "Bye"
 
